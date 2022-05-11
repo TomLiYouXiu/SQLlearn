@@ -88,9 +88,76 @@ source sql文件路径（不要有中文）
 
 # 7.简单查询
 
-**查询一个字段**
+**查询单个字段**
 
 ~~~sql
 select 字段名 from 表名;
 ~~~
 
+**查询多个字段**
+
+~~~sql
+select 字段名,字段名(逗号分割) from 表名;
+~~~
+
+**查询所有字段**
+
+~~~sql
+select * from 表名;
+~~~
+
+缺点：1.效率低
+
+​			2.可读性差
+
+建议：每个字段单独进行查询
+
+**给查询的列起别名**(原表不改)
+
+~~~sql
+select 字段名 as 别名 from 表名;
+--或者
+select 字段名  别名 from 表名;
+--假设别名里有空格
+select 字段名 '别名' from 表名;(单引号或者双引号，一般使用单引号)
+--别名是中文就可以用单引号括起来
+~~~
+
+**数学运算**
+
+~~~sql
+--字段可以直接使用数学表达式
+-列
+select ENAME,SAL*12 年薪 from emp;
+~~~
+
+# 8.条件查询
+
+**语法格式**
+
+~~~sql
+select 
+--字段1,字段2,字段3……
+from
+--表名
+where
+--条件;
+~~~
+
+**条件**
+
+~~~sql
+--数字或者字符串也行（字符串单引号引起来）
+-- =等于
+select EMPNO,ENAME from emp where sal=800;
+-- !=不等于(或者<>)
+select EMPNO,ENAME from emp where sal!=800;
+-- >=
+-- <=
+-- >
+-- <
+-- betweeen …… and ……（两个值之间）等同于 >= <=
+-- 注意使用betweeen …… and ……时左小右大 闭区间
+~~~
+
+[老杜带你学_mysql入门基础（mysql基础视频+数据库实战)_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Vy4y1z7EX?p=21&spm_id_from=pageDriver)
