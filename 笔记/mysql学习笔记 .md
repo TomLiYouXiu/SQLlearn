@@ -158,6 +158,17 @@ select EMPNO,ENAME from emp where sal!=800;
 -- <
 -- betweeen …… and ……（两个值之间）等同于 >= <=
 -- 注意使用betweeen …… and ……时左小右大 闭区间
+-- is null 是空
+-- is not null 非空
+-- and 与 并且条件的交集
+-- or 或 条件的并集
+--and的优先级比or高，一个语句中同时出现and和or时会先执行and条件
+
+-- in 包含
+-- not 取非
+-- like 模糊查询
+-- %匹配任意个字符
+-- _（下划线）一个下划线只匹配一个字符
+--数据库中的null不能使用=进行衡量因为，null不是一个值要用is NULL
 ~~~
 
-[老杜带你学_mysql入门基础（mysql基础视频+数据库实战)_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Vy4y1z7EX?p=21&spm_id_from=pageDriver)
