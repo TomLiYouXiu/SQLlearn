@@ -164,7 +164,8 @@ select EMPNO,ENAME from emp where sal!=800;
 -- or 或 条件的并集
 --and的优先级比or高，一个语句中同时出现and和or时会先执行and条件
 
--- in 包含
+-- in 包含 跟的是具体的值，不是一个区间
+-- not in 不包含
 -- not 取非
 -- like 模糊查询
 -- %匹配任意个字符
@@ -172,3 +173,42 @@ select EMPNO,ENAME from emp where sal!=800;
 --数据库中的null不能使用=进行衡量因为，null不是一个值要用is NULL
 ~~~
 
+# 9排序
+
+默认是升序
+
+~~~sql
+select * from emp order by sal;
+~~~
+
+指定降序查询
+
+~~~sql
+select * from emp order by sal desc; 
+~~~
+
+指定升序查询
+
+~~~sql
+select * from emp order by sal asc; 
+~~~
+
+两个字段排序或多个字段排序
+
+~~~sql
+--查询员工名字和薪资，要求按照薪资升序，如果薪资一样在按照名字升序排列
+select 
+	ename,sal
+from
+	emp
+order by
+	sal asc,ename asc;--sal在前起主导，只有sal相等才会进行ename排序
+~~~
+
+根据字段位置也可以进行排序（了解一下就行，不健壮）
+
+~~~sql
+select ename,sal from emp order by 2;--表示第二列进行排序也就是sal 
+~~~
+
+[老杜带你学_mysql入门基础（mysql基础视频+数据库实战)_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Vy4y1z7EX?p=30&spm_id_from=pageDriver)

@@ -26,11 +26,47 @@ select empno,ename,job,sal from emp where job ='MANAGER' and sal > 2500;
 
 ~~~
 select empno,ename,job,sal from emp where job ='MANAGER' or job ='SALESMAN';
+select * from emp where job in ('MANAGER','SALESMAN');
 ~~~
 
 **查询工资大于2500，并且部门编号为10或者20的员工信息**
 
 ~~~sql
 select * from emp where sal > 2500 and (deptno=20 or deptno=10);
+~~~
+
+**找出名字中含O的**
+
+~~~sql
+select * from emp where ename like '%o%';
+~~~
+
+**找出名字以t结尾的**
+
+~~~sql
+select * from emp where ename like '%t';
+~~~
+
+# **综合题目**
+
+**找出工资在1250到3000之间的员工信息，要求按照薪资降序排列**
+
+~~~sql
+select * from 
+	emp
+where
+	sal >= 1250
+and 
+	sal <= 2500
+order by sal desc;
+---字段顺序不能变
+select 
+	……
+from
+	……
+where
+	……
+order by
+	……
 ~~~
 
