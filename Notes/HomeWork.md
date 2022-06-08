@@ -70,3 +70,9 @@ order by
 	……
 ~~~
 
+**名字转小写**
+
+~~~sql
+select Lower(ename) from emp;
+~~~
+

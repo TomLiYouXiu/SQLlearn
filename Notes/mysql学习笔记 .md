@@ -211,4 +211,28 @@ order by
 select ename,sal from emp order by 2;--表示第二列进行排序也就是sal 
 ~~~
 
-[老杜带你学_mysql入门基础（mysql基础视频+数据库实战)_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1Vy4y1z7EX?p=30&spm_id_from=pageDriver)
+# 10数据处理函数
+
+**数据处理函数又被称为单行处理函数**
+
+单行处理函数的特点是：一个输入对应一个输出。
+
+和单行处理函数相对的是：多行处理函数（多个输入一个输出）
+
+**单行处理函数**
+
+~~~sql
+Lower --转换小写
+upper --转换大写
+substr --取子串（substr(被截取的字符串,起始下标,截取的长度)）
+length --取长度
+trim --去空格
+str_to_date --将字符串转换成日期
+date_format --格式化日期
+format --设置千分位
+round --四舍五入
+rand() --生成随机数
+Ifnull --可以将 null 转换成一个具体值
+~~~
+
+
